@@ -1,0 +1,18 @@
+[flake8]
+max-arguments = 12
+max-imports = 20
+max-import-from-members = 10
+max-expressions = 12
+max-methods = 10
+max-local-variables = 16
+max-module-members = 20
+max-try-body-length = 10
+max-cognitive-average = 10
+max-cognitive-score = 30
+max-annotation-complexity = 4
+max-line-complexity = 15
+max-complexity = 15
+max-name-length = 60
+max-line-length = 100
+count = true
+ignore = E402, C812, D100, D101, D102, D103, D104, D105, D106, D107, D401, N818

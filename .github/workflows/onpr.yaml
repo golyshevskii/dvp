@@ -1,0 +1,24 @@
+name: Pull Request Checking
+
+on: [pull_request]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v2
+      - name: Install python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.12'
+      - name: Install poetry
+        run: pip install poetry poetry-core
+      - name: Install dependencies
+        run: poetry install
+      - name: Run checking
+        run: make format-check

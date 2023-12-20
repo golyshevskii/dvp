@@ -3,11 +3,12 @@ DT_NOW := $(shell date)
 # FORMATTING
 format:
 	@$(info $(DT_NOW) | INFO | Makefile → Formatting...)
-	poetry run black .
-	poetry run isort .
-	poetry run flake8 .
+	poetry run black scripts
+	poetry run isort scripts
+	poetry run flake8 scripts
 
 format-check:
 	@$(info $(DT_NOW) | INFO | Makefile → Format checking...)
-	poetry run black --check .
-	poetry run isort --check .
+	poetry run black --check scripts
+	poetry run isort --check scripts
+	poetry run flake8 scripts

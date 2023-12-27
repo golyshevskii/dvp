@@ -12,3 +12,8 @@ format-check:
 	poetry run black --check scripts
 	poetry run isort --check scripts
 	poetry run flake8 scripts
+
+# DBT
+dbt-debug:
+	@$(info $(DT_NOW) | INFO | Makefile → Running dbt debug...)
+	dbt debug

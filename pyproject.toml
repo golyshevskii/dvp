@@ -12,6 +12,9 @@ isort = "^5.13.2"
 flake8 = "^6.1.0"
 pandas = "^2.1.4"
 sqlalchemy = "^2.0.23"
+dbt-postgres = "^1.7.4"
+dbt-core = "^1.7.4"
+setuptools = "^69.0.3"
 
 [tool.black]
 line-length = 100

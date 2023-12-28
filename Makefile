@@ -16,4 +16,4 @@ format-check:
 # DBT
 dbt-debug:
 	@$(info $(DT_NOW) | INFO | Makefile → Running dbt debug...)
-	dbt debug
+	@cd dvp_dbt && dbt debug

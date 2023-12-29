@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: dvp_raw
+    database: dvp
+    schema: raw
+    tables:
+      - name: raw_student_course_cohort

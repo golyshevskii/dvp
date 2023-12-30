@@ -1,0 +1,22 @@
+version: 2
+
+sources:
+  - name: dvp_raw
+    database: dvp
+    schema: raw
+    tables:
+      - name: raw_student_course_cohort
+        description: Course cohorts purchased by the student
+
+  - name: dvp_raw_vault
+    database: dvp
+    schema: raw_vault
+    tables:
+      - name: hub_course
+        description: The entity of business course keys
+      - name: hub_cohort
+        description: The entity of business course cohort keys
+      - name: hub_student
+        description: The entity of business student keys
+      - name: hub_purchase
+        description: The entity of business purchase keys

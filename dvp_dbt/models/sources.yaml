@@ -18,5 +18,9 @@ sources:
         description: The entity of business course cohort keys
       - name: hub_student
         description: The entity of business student keys
-      - name: hub_purchase
-        description: The entity of business purchase keys
+      - name: link_course_cohort
+        description: The relationship between hub_course and hub_cohort
+      - name: link_student_course
+        description: The relationship between hub_student and hub_course
+      - name: link_student_cohort
+        description: The relationship between hub_student and hub_cohort

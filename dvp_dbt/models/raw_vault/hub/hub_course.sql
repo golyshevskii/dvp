@@ -1,16 +1,21 @@
 {{
     config(
         schema='vault',
-        materialized='incremental'
+        materialized='incremental',
+        indexes=[
+            {'columns': ['course_bk'], 'unique': True, 'type': 'btree'},
+            {'columns': ['course_hk'], 'type': 'btree'},
+            {'columns': ['load_dt'], 'type': 'btree'},
+        ]
     ) 
 }}
 
 {%- set yaml_metadata -%}
-source_model: "stg_student_course_cohort"
-src_pk: "course_hk"
-src_nk: "course_id"
-src_ldts: "load_dt"
-src_source: "record_source"
+source_model: v_stg_student_course_cohort
+src_pk: course_hk
+src_nk: course_bk::varchar(200)
+src_ldts: load_dt
+src_source: record_source::varchar(10)
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

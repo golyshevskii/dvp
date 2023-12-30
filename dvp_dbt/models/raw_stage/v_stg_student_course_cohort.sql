@@ -5,22 +5,19 @@
 }}
 
 {%- set yaml_metadata -%}
-source_model:
-    dvp_raw: "raw_student_course_cohort"
+source_model: v_raw_student_course_cohort
 derived_columns:
     record_source: "!LMS"
     effective_from_dt: load_dt
 hashed_columns:
-    course_hk: course_id
-    cohort_hk: course_cohort
-    student_hk: student_lms_id
-    purchase_hk:
-        - course_cohort
-        - student_lms_id
+    course_hk: course_bk
+    cohort_hk: cohort_bk
+    student_hk: student_bk
+    purchase_hk: purchase_bk
     student_hashdiff:
         is_hashdiff: true
         columns:
-            - student_lms_id
+            - student_bk
             - student_email
             - student_name
 {%- endset -%}

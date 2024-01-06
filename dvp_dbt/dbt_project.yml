@@ -43,6 +43,6 @@ models:
       link:
         +tags:
           - 'link'
-      satellite:
+      sat:
         +tags:
-          - 'satellite'
+          - 'sat'

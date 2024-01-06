@@ -28,6 +28,7 @@ hashed_columns:
         columns:
             - student_bk
             - student_email
+            - student_username
             - student_name
 {%- endset -%}
 

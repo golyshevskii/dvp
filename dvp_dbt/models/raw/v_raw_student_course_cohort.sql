@@ -8,3 +8,7 @@ select
     scc.enrollment_dt,
     scc.load_dt
 from {{ source('dvp_raw', 'raw_student_course_cohort') }} scc
+where scc.load_dt > (
+    select coalesce(max(load_dt), '1970-01-01') 
+    from {{ source('dvp_raw_vault', 't_link_student_cohort') }}
+    )

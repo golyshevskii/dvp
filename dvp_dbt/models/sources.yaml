@@ -20,7 +20,7 @@ sources:
         description: The entity of business student keys
       - name: link_course_cohort
         description: The relationship between hub_course and hub_cohort
-      - name: link_student_course
+      - name: t_link_student_course
         description: The relationship between hub_student and hub_course
-      - name: link_student_cohort
+      - name: t_link_student_cohort
         description: The relationship between hub_student and hub_cohort

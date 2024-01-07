@@ -6,7 +6,7 @@
             {"columns": ["student_cohort_hk"], "unique": True, "type": "btree"},
             {"columns": ["student_hk"], "type": "btree"},
             {"columns": ["cohort_hk"], "type": "btree"},
-            {"columns": ["enrollment_dt"], "type": "btree"},
+            {"columns": ["effective_from"], "type": "btree"},
             {"columns": ["load_dt"], "type": "btree"},
         ]
     )
@@ -15,7 +15,7 @@
 {%- set source_model = "v_stg_student_course_cohort" -%}
 {%- set src_pk = "student_cohort_hk" -%}
 {%- set src_fk = ["student_hk", "cohort_hk"] -%}
-{%- set src_eff = "enrollment_dt" -%}
+{%- set src_eff = "effective_from" -%}
 {%- set src_ldts = "load_dt" -%}
 {%- set src_source = "record_source::varchar(10)" -%}
 

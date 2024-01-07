@@ -8,6 +8,7 @@
 source_model: v_raw_student_course_cohort
 derived_columns:
     record_source: "!LMS"
+    effective_from: enrollment_dt
     start_dt: load_dt
     end_dt: to_date('9999-12-31', 'YYYY-MM-DD')
 hashed_columns:

@@ -7,7 +7,7 @@ select
     c.course_end_dt,
     c.load_dt
 from {{ source('dvp_raw', 'raw_course') }} c
-where c.load_dt > (
-    select coalesce(max(load_dt), '1970-01-01') as max_load_dt
-    from {{ source('dvp_raw_vault', 'hub_course') }}
-    )
+-- where c.load_dt > (
+--     select coalesce(max(load_dt), '1970-01-01') as max_load_dt
+--     from {{ source('dvp_raw_vault', 'hub_course') }}
+--     )

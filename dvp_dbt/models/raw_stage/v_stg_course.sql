@@ -7,7 +7,7 @@
 {%- set yaml_metadata -%}
 source_model: "v_raw_course"
 derived_columns:
-    record_source: "!1"
+    record_source: "!2"
     effective_from: "course_start_dt"
 hashed_columns:
     line_hk: "course_line_bk"

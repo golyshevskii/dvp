@@ -10,7 +10,7 @@
     ) 
 }}
 
-{% set source_model = "v_stg_student_course_cohort" %}
+{% set source_model = ["v_stg_course", "v_stg_student_course_cohort"] %}
 {% set src_pk = "course_hk" %}
 {% set src_nk = "course_bk::varchar(200)" %}
 {% set src_ldts = "load_dt" %}

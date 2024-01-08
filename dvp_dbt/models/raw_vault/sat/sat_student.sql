@@ -3,7 +3,7 @@
         schema="vault",
         materialized="incremental",
         indexes=[
-            {"columns": ["student_hk", "student_email", "student_name"], "unique": True, "type": "btree"},
+            {"columns": ["hashdiff"], "unique": True, "type": "btree"},
             {"columns": ["student_hk"], "type": "btree"},
             {"columns": ["student_email"], "type": "btree"},
             {"columns": ["load_dt"], "type": "btree"},

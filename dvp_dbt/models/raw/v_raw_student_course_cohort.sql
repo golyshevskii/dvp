@@ -5,7 +5,7 @@ select
     lower(trim(scc.student_email)) as student_email,
     lower(trim(scc.student_username)) as student_username,
     initcap(trim(scc.student_name)) as student_name,
-    scc.enrollment_dt,
+    scc.student_enrollment_dt,
     scc.load_dt
 from {{ source('dvp_raw', 'raw_student_course_cohort') }} scc
 where scc.load_dt > (

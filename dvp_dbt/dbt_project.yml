@@ -34,6 +34,13 @@ models:
     # Config indicated by + and applies to all files under models/raw/
     raw:
       +materialized: view
+      +tags:
+        - 'raw'
+    
+    raw_stage:
+      +materialized: table
+      +tags:
+        - 'raw_stage'
 
     raw_vault:
       +materialized: incremental
@@ -43,6 +50,9 @@ models:
       link:
         +tags:
           - 'link'
+      t_link:
+        +tags:
+          - 't_link'
       sat:
         +tags:
           - 'sat'

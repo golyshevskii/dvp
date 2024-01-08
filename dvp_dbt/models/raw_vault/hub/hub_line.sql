@@ -3,16 +3,16 @@
         schema="vault",
         materialized="incremental",
         indexes=[
-            {"columns": ["course_hk"], "unique": True, "type": "btree"},
-            {"columns": ["course_bk"], "type": "btree"},
+            {"columns": ["line_hk"], "unique": True, "type": "btree"},
+            {"columns": ["course_line_bk"], "type": "btree"},
             {"columns": ["load_dt"], "type": "btree"},
         ]
     ) 
 }}
 
-{% set source_model = ["v_stg_course", "v_stg_student_course_cohort"] %}
-{% set src_pk = "course_hk" %}
-{% set src_nk = "course_bk::varchar(200)" %}
+{% set source_model = "v_stg_course" %}
+{% set src_pk = "line_hk" %}
+{% set src_nk = "course_line_bk::varchar(50)" %}
 {% set src_ldts = "load_dt" %}
 {% set src_source = "record_source::varchar(10)" %}
 

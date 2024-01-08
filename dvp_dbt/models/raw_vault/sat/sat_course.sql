@@ -4,23 +4,26 @@
         materialized="incremental",
         indexes=[
             {"columns": ["hashdiff"], "unique": True, "type": "btree"},
-            {"columns": ["student_hk"], "type": "btree"},
-            {"columns": ["student_email"], "type": "btree"},
+            {"columns": ["course_hk"], "type": "btree"},
+            {"columns": ["course_tag"], "type": "btree"},
+            {"columns": ["course_start_dt"], "type": "btree"},
+            {"columns": ["course_end_dt"], "type": "btree"},
             {"columns": ["load_dt"], "type": "btree"},
         ]
     ) 
 }}
 
 {%- set yaml_metadata -%}
-source_model: "v_stg_student_course_cohort"
-src_pk: "student_hk"
+source_model: "v_stg_course"
+src_pk: "course_hk"
 src_hashdiff: 
-    source_column: "student_hashdiff"
+    source_column: "course_hashdiff"
     alias: "hashdiff"
 src_payload:
-    - "student_email"
-    - "student_username"
-    - "student_name"
+    - "course_tag"
+    - "course_title"
+    - "course_start_dt"
+    - "course_end_dt"
 src_ldts: "load_dt"
 src_source: "record_source::varchar(10)"
 {%- endset -%}

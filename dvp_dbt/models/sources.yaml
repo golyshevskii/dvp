@@ -7,6 +7,8 @@ sources:
     tables:
       - name: raw_student_course_cohort
         description: Course cohorts purchased by the student
+      - name: raw_course
+        description: Courses available in the platform
 
   - name: dvp_raw_vault
     database: dvp
@@ -24,3 +26,5 @@ sources:
         description: The relationship between hub_student and hub_course
       - name: t_link_student_cohort
         description: The relationship between hub_student and hub_cohort
+      - name: sat_student
+        description: The entity of student information

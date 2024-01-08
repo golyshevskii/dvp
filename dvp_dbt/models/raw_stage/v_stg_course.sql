@@ -5,30 +5,23 @@
 }}
 
 {%- set yaml_metadata -%}
-source_model: "v_raw_student_course_cohort"
+source_model: "v_raw_course"
 derived_columns:
-    record_source: "!1"
-    effective_from: "student_enrollment_dt"
+    record_source: "!2"
+    effective_from: "course_start_dt"
 hashed_columns:
+    line_hk: "course_line_bk"
     course_hk: "course_bk"
-    cohort_hk: "cohort_bk"
-    student_hk: "student_bk"
-    course_cohort_hk:
+    course_line_hk:
+        - "course_line_bk"
         - "course_bk"
-        - "cohort_bk"
-    student_course_hk:
-        - "student_bk"
-        - "course_bk"
-    student_cohort_hk:
-        - "student_bk"
-        - "cohort_bk"
-    student_hashdiff:
+    course_hashdiff:
         is_hashdiff: true
         columns:
-            - "student_bk"
-            - "student_email"
-            - "student_username"
-            - "student_name"
+            - "course_bk"
+            - "course_tag"
+            - "course_title"
+            - "course_end_dt"
 {%- endset -%}
 
 {% set metadata_dict = fromyaml(yaml_metadata) %}

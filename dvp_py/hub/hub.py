@@ -51,7 +51,6 @@ class Hub:
         raw_data = self._extract()
         if raw_data.empty:
             logger.info(f"{frame} → NO DATA")
-            print(f"{frame} → NO DATA")
             return
 
         self._load(raw_data)
@@ -60,10 +59,8 @@ class Hub:
 def hub_update(**kwargs):
     frame = currentframe().f_code.co_name
     logger.info(f"{frame} → START")
-    print(f"{frame} → START")
 
     hub = Hub(**kwargs)
     hub.update()
 
-    print(f"{frame} → END")
     logger.info(f"{frame} → END")

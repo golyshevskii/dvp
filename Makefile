@@ -3,15 +3,15 @@ DT_NOW := $(shell date)
 # FORMATTING
 format:
 	@$(info $(DT_NOW) | INFO | Makefile → Formatting...)
-	poetry run black scripts
-	poetry run isort scripts
-	poetry run flake8 scripts
+	poetry run black dvp_py
+	poetry run isort dvp_py
+	poetry run flake8 dvp_py
 
 format-check:
 	@$(info $(DT_NOW) | INFO | Makefile → Format checking...)
-	poetry run black --check scripts
-	poetry run isort --check scripts
-	poetry run flake8 scripts
+	poetry run black --check dvp_py
+	poetry run isort --check dvp_py
+	poetry run flake8 dvp_py
 
 # DBT
 dbt-debug:
